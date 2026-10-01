@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Wars Three</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080b10;color:#eee;font-family:Tahoma,Arial,sans-serif}
+header{padding:28px 18px;text-align:center;background:linear-gradient(135deg,#111827,#090d14);border-bottom:1px solid #263241}
+h1{margin:0 0 8px;font-size:30px;color:#f5c542}
+p{color:#aeb8c5}
+nav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:15px;background:#0d121a}
+button{background:#182230;color:#fff;border:1px solid #344457;border-radius:10px;padding:10px 16px;cursor:pointer}
+button:hover{background:#223044}
+main{max-width:1100px;margin:auto;padding:20px}
+.card{background:#101720;border:1px solid #263443;border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 8px 25px #0005}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.stat{padding:18px;border-radius:14px;background:#151f2b;border:1px solid #2b3948}
+.stat b{display:block;font-size:24px;color:#f5c542;margin-top:8px}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{padding:12px;border-bottom:1px solid #293645;text-align:right}
+th{color:#f5c542}
+.badge{display:inline-block;padding:5px 9px;border-radius:20px;background:#202d3c;color:#cbd5e1}
+footer{text-align:center;padding:25px;color:#748092}
+</style>
+</head>
+<body>
+<header>
+  <h1>🌍 WORLD WARS THREE</h1>
+  <p>شبیه‌ساز استراتژیک جهان • مدیریت کشورها، اقتصاد و دیپلماسی</p>
+</header>
+
+<nav>
+  <button onclick="show('home')">داشبورد</button>
+  <button onclick="show('countries')">کشورها</button>
+  <button onclick="show('economy')">اقتصاد</button>
+  <button onclick="show('diplomacy')">دیپلماسی</button>
+</nav>
+
+<main id="app"></main>
+
+<footer>World Wars Three — نسخه نمایشی استراتژی</footer>
+
+<script>
+const pages={
+home:`<section class="card"><h2>🎯 داشبورد فرماندهی</h2><p>در این نسخه، تمرکز روی مدیریت منابع، توسعه شهرها، پژوهش، تجارت و دیپلماسی است.</p>
+<div class="grid">
+<div class="stat">قدرت اقتصادی<b>78</b></div>
+<div class="stat">ثبات کشور<b>84%</b></div>
+<div class="stat">منابع<b>12,450</b></div>
+<div class="stat">اعتبار دیپلماتیک<b>63</b></div>
+</div></section>`,
+countries:`<section class="card"><h2>🌐 فهرست کشورها</h2>
+<table><tr><th>کشور</th><th>اقتصاد</th><th>ثبات</th><th>وضعیت</th></tr>
+<tr><td>آرکانیا</td><td>92</td><td>88%</td><td><span class="badge">پایدار</span></td></tr>
+<tr><td>نورستان</td><td>76</td><td>81%</td><td><span class="badge">در حال توسعه</span></td></tr>
+<tr><td>وسترا</td><td>69</td><td>74%</td><td><span class="badge">فعال</span></td></tr>
+<tr><td>سلستیا</td><td>84</td><td>90%</td><td><span class="badge">پایدار</span></td></tr>
+</table></section>`,
+economy:`<section class="card"><h2>💰 اقتصاد</h2><p>مدیریت تولید، تجارت و زیرساخت‌ها.</p><div class="grid">
+<div class="stat">تولید روزانه<b>1,240</b></div>
+<div class="stat">تجارت<b>+18%</b></div>
+<div class="stat">زیرساخت<b>72%</b></div>
+</div></section>`,
+diplomacy:`<section class="card"><h2>🤝 دیپلماسی</h2><p>اتحاد بساز، قرارداد تجاری ببند و روابط بین کشورها را مدیریت کن.</p>
+<div class="grid"><div class="stat">متحدان<b>4</b></div><div class="stat">قراردادها<b>7</b></div><div class="stat">اعتبار<b>63</b></div></div></section>`
+};
+function show(page){document.getElementById('app').innerHTML=pages[page]}
+show('home');
+</script>
+</body>
+</html>
